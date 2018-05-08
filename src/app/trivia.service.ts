@@ -12,7 +12,7 @@ export class TriviaService {
 
   getTrivia() {
     const url = 'https://opentdb.com/api.php?amount=10';
-    return this.http.get('url');
+    return this.http.get(url);
   }
 
 }
