@@ -1,7 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Quiz } from '../quiz';
-import { TriviaService } from '../trivia.service';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-quiz-lista',
@@ -10,20 +8,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class QuizListaComponent implements OnInit {
 
-  trivia: any [];
-
-  constructor(private http: HttpClient, private triviaService: TriviaService) { }
-
   @Input() quizList: Quiz[];
 
+  constructor() { }
+
   ngOnInit() {
-    this.getTrivia();
   }
-  getTrivia() {
-    this.triviaService.getTrivia()
-    .subscribe((trivia: any) => {
-      this.trivia = trivia;
-      console.error('trivia', trivia);
-    });
-  }
+
 }

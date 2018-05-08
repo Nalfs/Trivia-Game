@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Quiz } from './quiz';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TriviaService {
+  quizList: Quiz[];
 
   constructor(private http: HttpClient) { }
 
   getTrivia() {
-    return this.http.get('https://opentdb.com/api.php?amount=10&category=20&difficulty=medium&type=boolean');
+    const url = 'https://opentdb.com/api.php?amount=10';
+    return this.http.get('url');
   }
 
 }
